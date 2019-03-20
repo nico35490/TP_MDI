@@ -1,0 +1,28 @@
+Q1:
+-Pas de coordinateur
+-Petite vs Grande pizza : Puisque qu'l n'y a pas de différence de comportement,
+il n'est pas necessaire de creer une classe pour chaque type de pizza
+-Gestion des etat des commandes : patron de conception à état
+-Pas de moyens pour le collaborateur de se signaler comme "disponible"
+-la visibilité inutile dans un diagramme de classe
+-certains rôles sont explicités mais inutiles
+
+---
+
+Le pattern decorator est plus intéressant qu'un héritage simple car il permet d'ajouter
+des couches de paiements pour gérer plus aisément le paiement final de l'utilisateur
+
+---
+
+Le pattern state permettra d'avoir différents comportements de nos classes en
+fonction de l'état de la pizza. En modifiant l'état de la commande (par le coordinateur), on aura donc
+une différente méthode appelée lorsqu'on l'appellera.
+
+Chaque méthode des classes concretes (propre au pattern) doit réaliser le traitement métier 
+nécessaire avant de passer à l'état suivant.
+
+Par la suite on pourra ajouter des états supplémentaires plus facilement dans le code
+sans changer les états déja mis en place puisque le comportement d'une commande est séparé des données
+
+=>On pourrait utiliser le pattern Observer pour que le coordinateur "observe" les collaborateurs "observable"
+et puisse etre mis au courant de leur avancée
